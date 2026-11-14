@@ -271,7 +271,7 @@ class BraavaDataUpdateCoordinator(DataUpdateCoordinator):
             except asyncio.CancelledError:
                 raise
             except Exception as err:
-                _LOGGER.warning(
+                _LOGGER.debug(
                     "Braava 240 monitoring error: %s – reconnecting in %ds", err, backoff
                 )
                 await self._disconnect()
